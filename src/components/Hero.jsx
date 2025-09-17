@@ -7,9 +7,6 @@ function Hero() {
         <motion.section
             id="home"
             className="min-h-screen flex flex-col justify-center items-center bg-dark text-primary font-outfit pt-16"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
         >
 
             <motion.h1
@@ -27,7 +24,7 @@ function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
             >
-                Apprenti développeur full-stack et étudiant en 3ème année de BUT Informatique
+                Développeur Full Stack
             </motion.p>
 
             <motion.div

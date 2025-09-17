@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
-import ProjectFilters from './ProjectFilters';
 import ProjectModal from './ProjectModal';
 import greenCircle from '../assets/greencircle.png';
 import iPlans from '../assets/iplans.png';
@@ -18,13 +17,6 @@ const projectsData = [
         title: 'Green Circle',
         subtitle: 'Une plateforme éco-responsable',
         languages: ['React', 'NodeJS', 'MySQL', 'Python', 'Tailwind'],
-        competencies: [
-            { label: 'Réaliser', color: 'bg-darkRed' },
-            { label: 'Optimiser', color: 'bg-lightOrange' },
-            { label: 'Administrer', color: 'bg-darkYellow' },
-            { label: 'Conduire', color: 'bg-darkBlue' },
-            { label: 'Collaborer', color: 'bg-dark' }
-        ],
         description: "Site web permettant aux entreprises du Val d'Europe de participer à l'économie circulaire. La plateforme comprend un système de mise à disposition des objets non utilisés ainsi que leur récupération, un système d'e-learning pour former les entreprises partenaires sur l'économie circulaire, un système de gestion d'évenements ainsi qu'un forum de discussion pour les utilisateurs. Un chatbot a aussi été mis en place dans ce projet pour aider les utilisateurs à naviguer sur le site.",
         github: 'https://github.com/ChamsedineAmouche/Green-Circle'
     },
@@ -33,14 +25,6 @@ const projectsData = [
         title: 'iPlans',
         subtitle: 'Une plateforme pour passer des commandes de plans',
         languages: ['JavaScript', 'PHP', 'PostgreSQL', 'Bootstrap'],
-        competencies: [
-            { label: 'Réaliser', color: 'bg-darkRed' },
-            { label: 'Optimiser', color: 'bg-lightOrange' },
-            { label: 'Administrer', color: 'bg-darkYellow' },
-            { label: 'Gérer', color: 'bg-hulkGreen' },
-            { label: 'Conduire', color: 'bg-darkBlue' },
-            { label: 'Collaborer', color: 'bg-dark' }
-        ],
         description: "Dans un souci de modernisation et d'efficacité, l'application iPlans a été développée pour répondre à la nécessité de digitaliser le processus de commande de plans incendie. En abandonnant les supports papier et les échanges par mail ou téléphone, cette plateforme offre aux clients une solution intuitive et accessible en ligne. iPlans permet de suivre en temps réel l'évolution des commandes, simplifie les interactions avec les équipes de production, et automatise certaines tâches clés, telles que les relances automatiques. Cette application garantit une expérience utilisateur améliorée tout en optimisant la gestion et le traitement des commandes.​",
         github: ''
     },
@@ -49,13 +33,6 @@ const projectsData = [
         title: 'Projet Séville',
         subtitle: 'Site web sur la culture sévillane',
         languages: ['PHP', 'JavaScript','PostgreSQL'],
-        competencies: [
-            { label: 'Réaliser', color: 'bg-darkRed' },
-            { label: 'Optimiser', color: 'bg-lightOrange' },
-            { label: 'Gérer', color: 'bg-hulkGreen' },
-            { label: 'Conduire', color: 'bg-darkBlue' },
-            { label: 'Collaborer', color: 'bg-dark' }
-        ],
         description: "Projet réalisé en 1re année de BUT - Informatique en quatuor. Projet en partenariat avec l'Unesco. Le but était de concevoir un site dynamique et responsif sur la culture sévillane pour permettre aux utilisateurs de ce renseigner sur la ville en prévision d'un futur voyage. Le site est traduit en anglais et en espagnol.​",
         github: ''
     },
@@ -64,10 +41,6 @@ const projectsData = [
         title: 'Bataille de Boules',
         subtitle: 'Affrontez-vous pour dominer le champ de pixels',
         languages: ['Python'],
-        competencies: [
-            { label: 'Réaliser', color: 'bg-darkRed' },
-            { label: 'Optimiser', color: 'bg-lightOrange' },
-        ],
         description: "Projet réalisé en 1re année de BUT - Informatique en binômes. Le but étant de réaliser un jeu en 1 contre 1 (contre une personne physique) où l'objectif est de remplir le plus de surface possible avec des cercles de notre couleur. A la fin de la partie celui qui possède le plus de pixels gagne !",
         github: 'https://github.com/Eliaslhl/SAE_Python'
     },
@@ -76,12 +49,6 @@ const projectsData = [
         title: 'PimpMyPaids',
         subtitle: 'Plateforme de gestion de finances',
         languages: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap'],
-        competencies: [
-            { label: 'Réaliser', color: 'bg-darkRed' },
-            { label: 'Gérer', color: 'bg-hulkGreen' },
-            { label: 'Conduire', color: 'bg-darkBlue' },
-            { label: 'Collaborer', color: 'bg-dark' }
-        ],
         description: "Projet réalisé en 2ème année de BUT Informatique en quintette. PimpMyPaids est un portail Web spécialisé pour permettre aux clients, qu'ils soient des entreprises ou des commerçants, de consulter leurs comptes et de suivre leurs transactions financières quotidiennes facilement !",
         github: 'https://github.com/FC-Rats/PimpMyPaids'
     },
@@ -90,10 +57,6 @@ const projectsData = [
         title: 'Conférences Nexus',
         subtitle: 'Plateforme de gestion de conférences',
         languages: ['PHP', 'PostgreSQL', 'Python'],
-        competencies: [
-            { label: 'Réaliser', color: 'bg-darkRed' },
-            { label: 'Gérer', color: 'bg-hulkGreen' },
-        ],
         description: "Projet réalisé en 1re année de BUT - Informatique en binômes. Utilisation de la base de données conçu au semestre précèdent pour créer un site web permettant de l'utiliser. Conversion du fichier SQL au format PHPMyAdmin en fichier SQL au format PostgreSQL grâce à un script python. Ajustement du MCD et du MLD puis création de la maquette du site. Conception du site.",
         github: 'https://github.com/LeoDessertenne/Conference-Nexus'
     },
@@ -102,13 +65,6 @@ const projectsData = [
         title: 'Wacky Monkey Word',
         subtitle: 'Un duel linguistique en ligne : composez la chaîne de mots ultime',
         languages: ['PHP', 'Bootstrap', 'C', 'Java', 'Python', 'React', 'JavaScript', 'MySQL'],
-        competencies: [
-            { label: 'Réaliser', color: 'bg-darkRed' },
-            { label: 'Optimiser', color: 'bg-lightOrange' },
-            { label: 'Administrer', color: 'bg-darkYellow' },
-            { label: 'Conduire', color: 'bg-darkBlue' },
-            { label: 'Collaborer', color: 'bg-dark' }
-        ],
         description: "Projet réalisé en 2ème année de BUT Informatique en quatuor, consistant en la création d’un jeu en ligne, jouable en solo ou en multijoueur, où l’objectif est de construire la meilleure chaîne de mots à partir de deux mots de départ. Le jeu met en avant la ressemblance entre les mots, évaluée par un moteur de calcul prenant en compte des critères linguistiques et orthographiques, et permet aux joueurs de s’affronter en temps réel.",
         github: 'https://github.com/abdelrkb/SAE_SEMANTIC'
     }
@@ -139,10 +95,8 @@ function Projects() {
             {/* Header de la section */}
             <SectionHeader title="PROJETS" />
 
-            <ProjectFilters />
-
             {/* Carrousel */}
-            <div className="flex items-center justify-center relative max-w-5xl mx-auto w-full">
+            <div className="flex items-center justify-center relative max-w-5xl mx-auto w-full mt-24">
                 {/* Flèche de gauche */}
                 <button
                     onClick={handlePrev}
@@ -185,20 +139,6 @@ function Projects() {
                                         </span>
                                     ))}
                                 </div>
-
-                                {/* Section Compétences du projet */}
-                                {currentProject.competencies && (
-                                    <div className="flex flex-wrap gap-2 mt-4">
-                                        {currentProject.competencies.map((comp, idx) => (
-                                            <div
-                                                key={idx}
-                                                className={`px-3 py-1 text-xs text-white rounded ${comp.color}`}
-                                            >
-                                                {comp.label}
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
 
                                 {/* Bouton "Plus d'info" */}
                                 <button 
